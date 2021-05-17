@@ -20,6 +20,4 @@ RUN pip3 install resources requests staty
 
 WORKDIR /images/
 
-
-#ENTRYPOINT ["python3", "/labelImg/labelImg.py"]
-ENTRYPOINT ["sh"]
+ENTRYPOINT ["python3", "/labelImg/labelImg.py"]
