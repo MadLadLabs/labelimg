@@ -6,17 +6,26 @@ I decided to take ownership of this container image. Feel free to pull request a
 
 ## How to use
 
-Note that you need to provide your images path instead of `/path/to/images`
+Note that you need to provide your images path instead of `/path/to/images`.
 
 ~~~
 xhost +
 
 docker run -ti --rm \
 	-e DISPLAY=$DISPLAY \
-	--device=/dev/video0:/dev/video0 \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v /path/to/images:/images/ \
-	ludwigprager/labelimg:1
+	spiridonovpolytechnic/labelimg:latest
+~~~
+
+~~~
+xhost +
+
+docker run -ti --rm \
+	-e DISPLAY=$DISPLAY \
+	-v /tmp/.X11-unix:/tmp/.X11-unix \
+	-v $(pwd)/images:/images/ \
+	spiridonovpolytechnic/labelimg:latest
 ~~~
 
 ## Credit
